@@ -1,0 +1,17 @@
+#cloud-config
+ssh_pwauth: true
+ssh_quiet_keygen: true
+chpasswd:
+  expire: false
+  users:
+    - name: ansible
+      type: hash
+      password: $6$ZtPK8jybLrqrdJvo$qKej3kFaj3afXzWnws/VgQPWiXNiZ61GzI8tQTzrUpsCr19UkeqINxDbRpm/mFKieswPPSBzSP1YfahUckHE.1
+users:
+  - name: ansible
+    gecos: Ansible User
+    groups: wheel,floppy,input,audio,video
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEnYzWT/XaGk5CFFg7njD0+kMDuCvWaRfK7/6WDC9+aP ansible@libvirt
