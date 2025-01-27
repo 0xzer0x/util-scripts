@@ -95,6 +95,8 @@ _set-ci-data() {
     dist=ubuntu
   elif grep -q arch-linux <<<"${_SPECS[img]}"; then
     dist=arch
+  elif grep -q almalinux <<<"${_SPECS[img]}"; then
+    dist=rhel
   fi
 
   _CI_DATA[user]="${__CI_DATA_DIR}/${dist}/user-data.yml"
