@@ -106,7 +106,7 @@ _set-ci-data() {
 
 _set-os() {
   declare -a _oslist
-  mapfile -t _oslist < <(virt-install --osinfo list)
+  mapfile -t _oslist < <(virt-install --osinfo list | head -n-5)
   IFS=$'\n'
   _SPECS[os]="$(gum filter --fuzzy --height=8 <<<"${_oslist[*]}" | cut -d, -f1)"
   IFS=' '
