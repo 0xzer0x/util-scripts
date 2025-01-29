@@ -1,4 +1,4 @@
-## `create-vm`: Create libvirt VMs quickly
+## `vm-init`: Create libvirt VMs quickly
 
 ### Dependencies
 
