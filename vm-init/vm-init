@@ -2,7 +2,7 @@
 set -euo pipefail
 
 __SCRIPT_DIR="$(cd "$(dirname "$(realpath "${0}")")" && pwd)"
-__CI_DATA_DIR="${__SCRIPT_DIR}/cidata"
+__CI_DATA_DIR="${VIRT_HOME:-${__SCRIPT_DIR}}/cidata"
 __IMG_DIR="${VIRT_HOME:-${__SCRIPT_DIR}}/img"
 __DISKS_DIR="${VIRT_HOME:-${__SCRIPT_DIR}}/disks"
 
